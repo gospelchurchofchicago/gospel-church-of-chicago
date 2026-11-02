@@ -424,8 +424,12 @@ Still open (church decisions and outside tasks):
       workflows.~~ Done on Joseph's account: On GitHub and Email, failed
       workflows only, to his own address. After launch, run *Use the newest
       Sunday sermon* once by hand to confirm the job works
-- [ ] A church GitHub organization with two or more owners — decide before
-      the domain is verified
+- [ ] A church GitHub organization with two or more owners. **Decided:**
+      yes — Joseph will create it (church email as contact, Tori invited as a
+      second owner) and move the repository into it **before** the domain is
+      bought and verified. Afterwards: allow the Claude GitHub app on the
+      organization, and update the preview links, canonical URLs and the
+      weekly sermon task to the new location
 - [ ] Where to tell the congregation the church never asks for gift cards,
       wire transfers or payments by email or text
 - [ ] Keep or delete `GCC_Website_Project_Brief_Aug30_v4.pptx` (and its
