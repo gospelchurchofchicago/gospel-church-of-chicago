@@ -420,8 +420,10 @@ Still open (church decisions and outside tasks):
       **Oneness Church of Chicago, Des Plaines**, at gospelchurch1250. The
       code itself was read on 2 November and matches `zelleUrl`; both are
       now pinned by the site check
-- [ ] GitHub → Settings → Notifications → Actions: email on failed workflows,
-      so a failed sermon update reaches someone
+- [x] ~~GitHub → Settings → Notifications → Actions: email on failed
+      workflows.~~ Done on Joseph's account: On GitHub and Email, failed
+      workflows only, to his own address. After launch, run *Use the newest
+      Sunday sermon* once by hand to confirm the job works
 - [ ] A church GitHub organization with two or more owners — decide before
       the domain is verified
 - [ ] Where to tell the congregation the church never asks for gift cards,
