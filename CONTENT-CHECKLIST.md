@@ -411,9 +411,11 @@ Still open (church decisions and outside tasks):
 - [x] ~~Zoom links: keep on the site, or email only~~ — keep (see 5b)
 - [ ] Zoom, both meetings: waiting room, screen sharing host only, new passcodes
 - [ ] Parents' agreement for the photos with children (`congregation.jpg`,
-      `children-sanctuary.jpg` and `-wide`, `families.jpg`), and a one-line
-      policy for CLAUDE.md: *"We publish photos of children only with a
-      parent's agreement, and never with their names."*
+      `children-sanctuary.jpg` and `-wide`, `families.jpg`). **In progress:**
+      Joseph is collecting signed consent forms (2 November). Keep the signed
+      forms with the church, not in the website's files. If a family does
+      not sign, swap that photo before launch. The policy is now a house
+      rule in CLAUDE.md
 - [ ] Scan `assets/img/zelle-qr.png` with a phone once and confirm the bank
       shows Oneness Church of Chicago. (The code itself was read on
       2 November and matches `zelleUrl`.)

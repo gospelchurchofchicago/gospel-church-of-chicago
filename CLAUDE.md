@@ -110,6 +110,10 @@ volunteer's own guide, `CONTENT-CHECKLIST.md` for what the church still owes.
 **Always:**
 
 - US English spelling — this is a church in Des Plaines, Illinois.
+- Publish photos of children only with a parent's signed agreement, and
+  never with their names. Before adding a photo with a child in it, ask
+  whether the family has signed. The signed forms stay with the church,
+  never in this repository.
 - Keep the existing voice: warm, plain, unhurried. Short sentences. No
   marketing language, no exclamation marks.
 - Match the surrounding markup rather than inventing a new pattern. Nearly
