@@ -425,8 +425,10 @@ Still open (church decisions and outside tasks):
       workflows only, to his own address. After launch, run *Use the newest
       Sunday sermon* once by hand to confirm the job works
 - [ ] A church GitHub organization with two or more owners. **Decided:**
-      yes — Joseph will create it (church email as contact, Tori invited as a
-      second owner) and move the repository into it **before** the domain is
+      yes — owners: a GitHub account made with the church email (which
+      creates the organization), Joseph, and Tori. All owners have equal
+      rights. Keep the church account's two-step sign-in recovery codes with
+      the church. The repository moves into it **before** the domain is
       bought and verified. Afterwards: allow the Claude GitHub app on the
       organization, and update the preview links, canonical URLs and the
       weekly sermon task to the new location
