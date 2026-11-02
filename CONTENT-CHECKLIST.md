@@ -416,9 +416,10 @@ Still open (church decisions and outside tasks):
       forms with the church, not in the website's files. If a family does
       not sign, swap that photo before launch. The policy is now a house
       rule in CLAUDE.md
-- [ ] Scan `assets/img/zelle-qr.png` with a phone once and confirm the bank
-      shows Oneness Church of Chicago. (The code itself was read on
-      2 November and matches `zelleUrl`.)
+- [x] ~~Scan the Zelle code with a phone.~~ Done: Joseph's bank app shows
+      **Oneness Church of Chicago, Des Plaines**, at gospelchurch1250. The
+      code itself was read on 2 November and matches `zelleUrl`; both are
+      now pinned by the site check
 - [ ] GitHub → Settings → Notifications → Actions: email on failed workflows,
       so a failed sermon update reaches someone
 - [ ] A church GitHub organization with two or more owners — decide before

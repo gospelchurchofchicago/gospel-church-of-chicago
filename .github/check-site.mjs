@@ -201,7 +201,8 @@ for (const [key, line] of Object.entries(SERMON_LINES)) {
    Money sent by Zelle cannot be recalled, and nobody can tell one QR code
    from another by looking at it. These values were confirmed by reading the
    code on 2 November 2026: it holds ONENESS CHURCH OF CHICAGO and the token
-   gospelchurch1250, the same as zelleUrl. To change them: confirm the new
+   gospelchurch1250, the same as zelleUrl, and a bank app scanning it shows
+   Oneness Church of Chicago, Des Plaines. To change them: confirm the new
    details with the church treasurer in person or by phone -- never only by
    email or message -- then update the values here in the same change.     */
 
