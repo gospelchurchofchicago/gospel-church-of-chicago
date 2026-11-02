@@ -388,6 +388,48 @@ Churches running open daily prayer meetings do get targeted by people who
 find the link and join to disrupt it. A waiting room costs the host one
 click per person and ends the problem.
 
+**Decided 2 November 2026:** the links stay on the site; if people start to
+abuse them, revisit. The links and passcodes are already readable in the
+public repository, so changing them on the site alone would not take them
+back — only a change in Zoom does. Also worth setting in Zoom, for both
+meetings: **screen sharing to host only**.
+
+---
+
+## 5c. From Tori's review, 2 November 2026
+
+Done in the repository: the weekly sermon job accepts only a real YouTube
+video code; the site check now refuses a sermon line with anything else on
+it, refuses any change to the Zelle code, `zelleUrl` or `givingUrl` until
+the pinned values are deliberately updated, and checks every page exists in
+both languages; only the publishing step may publish; the Korean in
+`site.js` is written as Korean; README, EDITING.md and CLAUDE.md corrected.
+The English playlist ID was checked and is right.
+
+Still open (church decisions and outside tasks):
+
+- [x] ~~Zoom links: keep on the site, or email only~~ — keep (see 5b)
+- [ ] Zoom, both meetings: waiting room, screen sharing host only, new passcodes
+- [ ] Parents' agreement for the photos with children (`congregation.jpg`,
+      `children-sanctuary.jpg` and `-wide`, `families.jpg`), and a one-line
+      policy for CLAUDE.md: *"We publish photos of children only with a
+      parent's agreement, and never with their names."*
+- [ ] Scan `assets/img/zelle-qr.png` with a phone once and confirm the bank
+      shows Oneness Church of Chicago. (The code itself was read on
+      2 November and matches `zelleUrl`.)
+- [ ] GitHub → Settings → Notifications → Actions: email on failed workflows,
+      so a failed sermon update reaches someone
+- [ ] A church GitHub organization with two or more owners — decide before
+      the domain is verified
+- [ ] Where to tell the congregation the church never asks for gift cards,
+      wire transfers or payments by email or text
+- [ ] Keep or delete `GCC_Website_Project_Brief_Aug30_v4.pptx` (and its
+      mention in README.md)
+- [ ] Hide "Upcoming events" on the home page when there are none
+- [ ] Ask whoever runs the livestream whether Sunday's stream is ever set up
+      days ahead. As of 2 November nothing was scheduled ahead, and the
+      Sunday video appears on Sunday night
+
 ---
 
 ## 6. Decisions still open

@@ -175,18 +175,34 @@ issues and renews automatically — which is what the current site at
    | A | `@` | `185.199.109.153` |
    | A | `@` | `185.199.110.153` |
    | A | `@` | `185.199.111.153` |
+   | AAAA | `@` | `2606:50c0:8000::153` (and `8001`, `8002`, `8003`) |
    | CNAME | `www` | `<owner>.github.io` |
+   | TXT | `@` | `v=spf1 -all` |
+   | TXT | `_dmarc` | `v=DMARC1; p=reject` |
 
    If the registrar supports `ALIAS` or `ANAME` records, one of those pointed
-   at `<owner>.github.io` can replace the four A records.
+   at `<owner>.github.io` can replace the four A records. The two TXT records
+   say the domain never sends email, so mail forged from it is rejected. Add
+   no MX records: nobody receives mail at the domain.
 
-2. **Add a file named `CNAME`** in the root of this repository containing
-   nothing but the domain, e.g. `gospelchurch1.com`. It has no file
-   extension.
+   Before this, verify the domain on the GitHub account (or organization)
+   that **owns this repository**: that account's Settings → Pages → *Add a
+   domain*, then add the TXT record GitHub gives you. A domain verified on any
+   other account blocks this site from using it. Never delete that TXT record.
 
-3. **In Settings → Pages**, enter the domain under *Custom domain*, wait for
-   the DNS check to pass, then tick **Enforce HTTPS**. The certificate can
-   take a few minutes to issue.
+2. **In the repository's Settings → Pages**, enter the domain under *Custom
+   domain*, wait for the DNS check to pass, then tick **Enforce HTTPS**. The
+   certificate can take a few minutes to issue.
+
+   Do not add a `CNAME` file to the repository. This site publishes through
+   GitHub Actions, which ignores that file; the domain lives only in the
+   Pages setting.
+
+3. **On a branch**, change every page's canonical link from the `github.io`
+   address to the domain, and the preview link in `CLAUDE.md` to
+   `https://<domain>/preview/<branch>/`. When the church is ready to be found
+   in search, remove `Disallow: /` from `robots.txt` (keep
+   `Disallow: /preview/`).
 
 DNS changes can take up to an hour to take effect. Leave the old site running
 for a week or so afterward.

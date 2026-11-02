@@ -35,6 +35,10 @@ const SETTINGS = "assets/js/site.js";
 const HOW_MANY_TO_TRY = 10;
 const SUNDAY = "\uc8fc\uc77c\uc608\ubc30";   // 주일예배 -- how the church titles a Sunday service
 
+// Every YouTube video code is exactly this. The code is written into a line
+// of site.js that runs on every page, so nothing else is ever let through.
+const VIDEO_ID = /^[A-Za-z0-9_-]{11}$/;
+
 function report(changed, note) {
   console.log(note);
   if (process.env.GITHUB_OUTPUT) {
@@ -90,7 +94,7 @@ async function newestVideos(feedUrl, keep) {
     const when = block.match(/<published>([^<]+)<\/published>/);
     const name = block.match(/<title>([^<]*)<\/title>/);
     const title = name ? name[1] : "";
-    if (id && keep(title)) {
+    if (id && VIDEO_ID.test(id[1]) && keep(title)) {
       entries.push({ id: id[1], when: when ? Date.parse(when[1]) : 0 });
     }
   }

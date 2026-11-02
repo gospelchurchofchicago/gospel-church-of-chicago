@@ -56,6 +56,11 @@ The weekly sermon job publishes `main` every Monday morning when there is a
 new sermon, and that also clears whatever preview was up. If a preview
 vanishes on a Monday, push the branch again.
 
+GitHub switches a scheduled job off after 60 days without activity in the
+repository. The weekly sermon commits keep it running, but after a long
+break — two months with no new sermon — check the Actions tab and re-enable
+*Use the newest Sunday sermon* if it says it is disabled.
+
 Scheduled jobs in `.github/workflows/` only ever run from `main`. A schedule
 added on a branch does nothing until the branch is merged.
 
@@ -87,7 +92,10 @@ volunteer's own guide, `CONTENT-CHECKLIST.md` for what the church still owes.
 
 **Never:**
 
-- Commit to `main` without a previewed, approved change.
+- Commit to `main` without a previewed, approved change. The weekly sermon
+  job is the one exception, by design: it commits to `main` by itself, and it
+  may only ever change the two sermon lines in `site.js`. Do not "fix" it,
+  and do not copy the pattern for anything else.
 - Weaken, skip, or delete `.github/check-site.mjs` to make something pass.
 - Handle payments. The Give page links out to the church's giving platform.
 - Machine-translate between the two sites. The Korean pages are written in
@@ -224,13 +232,23 @@ the Events page.
 **"The sermon on the site is old."** The Sermons page has two players: the
 Sunday sermon (`latestSermonId`) and the English Ministry sermon
 (`englishSermonId`, from the playlist in `englishPlaylistId`). The weekly job
-keeps both current. To catch up by hand, run `node .github/newest-sermon.mjs`.
+keeps both current. To catch up by hand once the site is live: Actions →
+*Use the newest Sunday sermon* → *Run workflow*. Before launch, or from a
+Claude Code web session, run `node .github/newest-sermon.mjs` with
+`NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt` in front,
+so it can reach YouTube through the session's proxy.
 
 **"Change the Zelle code."** Replace `assets/img/zelle-qr.png` with the new
 code — cut out on its own, with a white margin and no rounded corners — and
-put the address it points to in `zelleUrl` in `site.js`. Read the code before
-publishing it: it must hold the church's name, never a personal phone number
-or email.
+put the address it points to in `zelleUrl` in `site.js`.
+
+The site check pins the Zelle code picture, `zelleUrl` and `givingUrl`, so
+changing any of them fails the check until the pinned values in
+`.github/check-site.mjs` are updated in the same change. Update them only
+after the new details are confirmed with the church treasurer in person or
+by phone — never only by email or message — and after reading the new code
+with a QR reader or a phone: it must hold the church's name, never a personal
+phone number or email. Nobody can tell one QR code from another by looking.
 
 **"Link the prayer request or connect card form."** Paste the Google Form's
 link into `prayerFormUrl` or `connectFormUrl` in `site.js`. Until a link is

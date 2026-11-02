@@ -19,7 +19,7 @@ var SITE = {
   churchNameKo:   "시카고가스펠교회",
   shortName:      "GCC",
   tagline:        "A warm, Christ-centered church in Des Plaines, Illinois, worshipping in Korean and in English.",
-  taglineKo:      "\uc77c\ub9ac\ub178\uc774\uc8fc \ub370\uc2a4\ud50c\ub808\uc778\uc2a4\uc5d0\uc11c \ud55c\uad6d\uc5b4\uc640 \uc601\uc5b4\ub85c \uc608\ubc30\ud558\ub294 \uad50\ud68c\uc785\ub2c8\ub2e4.",
+  taglineKo:      "일리노이주 데스플레인스에서 한국어와 영어로 예배하는 교회입니다.",
 
   /* --- Sunday worship -------------------------------------------------- */
   serviceTime:    "10:00 AM",
@@ -113,13 +113,13 @@ var SITE = {
      Korean reader stays in Korean as they move around. Each line here
      matches a page in ko/ -- if you add one, add it to both lists.    */
   navKo: [
-    { label: "\ud648",         href: "index.html"      },
-    { label: "\uad50\ud68c \uc18c\uac1c",  href: "about.html"      },
-    { label: "\uc608\ubc30 \uc548\ub0b4",  href: "visit.html"      },
-    { label: "\uc0ac\uc5ed",       href: "ministries.html" },
-    { label: "\uc120\uad50",       href: "missions.html"   },
-    { label: "\uc124\uad50",       href: "sermons.html"    },
-    { label: "\uc77c\uc815",       href: "events.html"     }
+    { label: "홈",         href: "index.html"      },
+    { label: "교회 소개",  href: "about.html"      },
+    { label: "예배 안내",  href: "visit.html"      },
+    { label: "사역",       href: "ministries.html" },
+    { label: "선교",       href: "missions.html"   },
+    { label: "설교",       href: "sermons.html"    },
+    { label: "일정",       href: "events.html"     }
   ]
 
 };
@@ -153,25 +153,25 @@ var SITE = {
   var twin = BOTH_LANGUAGES.indexOf(HERE) === -1 ? "index.html" : HERE;
 
   var WORDS = KOREAN ? {
-    skip:      "\ubcf8\ubb38\uc73c\ub85c \uac74\ub108\ub6f0\uae30",
-    menu:      "\uba54\ub274",
-    give:      "\ud5cc\uae08",
+    skip:      "본문으로 건너뛰기",
+    menu:      "메뉴",
+    give:      "헌금",
     giveHref:  "give.html",
     otherLang: "English",
     otherHref: "../" + twin,
-    sundays:   "\uc8fc\uc77c \uc608\ubc30",
-    plan:      "\uc608\ubc30 \uc548\ub0b4 \ubcf4\uae30",
+    sundays:   "주일 예배",
+    plan:      "예배 안내 보기",
     planHref:  "visit.html",
-    findUs:    "\uc624\uc2dc\ub294 \uae38",
-    more:      "\ub354 \ubcf4\uae30",
-    contact:   "\uc5f0\ub77d\ucc98",
+    findUs:    "오시는 길",
+    more:      "더 보기",
+    contact:   "연락처",
     home:      "index.html"
   } : {
     skip:      "Skip to content",
     menu:      "Menu",
     give:      "Give",
     giveHref:  ROOT + "give.html",
-    otherLang: "\ud55c\uad6d\uc5b4",
+    otherLang: "한국어",
     otherHref: ROOT + "ko/" + twin,
     sundays:   "Sundays",
     plan:      "Plan your visit",
@@ -304,7 +304,7 @@ var SITE = {
         '<p class="footer__social">' + social + "</p>" +
         '<p><a href="' + esc(WORDS.otherHref) + '"' +
           (KOREAN ? "" : ' lang="ko"') + ">" +
-          esc(KOREAN ? "English site" : "\ud55c\uad6d\uc5b4 \uc548\ub0b4") + "</a></p>" +
+          esc(KOREAN ? "English site" : "한국어 안내") + "</a></p>" +
       "</div>";
   }
 
@@ -366,19 +366,19 @@ var SITE = {
 
     var channelLink = SITE.youtubeChannelUrl
       ? '<a href="' + esc(SITE.youtubeChannelUrl) + '">' +
-        (korean ? "\uad50\ud68c \uc720\ud29c\ube0c \ucc44\ub110" : "YouTube channel") + "</a>"
+        (korean ? "교회 유튜브 채널" : "YouTube channel") + "</a>"
       : "";
 
     var sunday = document.getElementById("sermon-player");
     if (sunday) {
       sermonPlayer(sunday, SITE.latestSermonId,
-        korean ? churchName + " \uc8fc\uc77c \uc124\uad50" : "A sermon from " + SITE.churchName,
+        korean ? churchName + " 주일 설교" : "A sermon from " + SITE.churchName,
         // The services are streamed, so YouTube files them under Live, not Videos.
         SITE.youtubeChannelUrl ? SITE.youtubeChannelUrl + "/streams" : "",
-        korean ? "\ud55c\uad6d\uc5b4 \uc608\ubc30 \uc124\uad50 \ub354 \ubcf4\uae30" : "More from the Korean service",
+        korean ? "한국어 예배 설교 더 보기" : "More from the Korean service",
         korean
-          ? "<strong>\uc124\uad50 \uc601\uc0c1\uc740 \uace7 \uc774\uacf3\uc5d0 \uc62c\ub77c\uc635\ub2c8\ub2e4.</strong>" +
-            (channelLink ? " \uadf8\ub3d9\uc548\uc5d0\ub294 " + channelLink + "\uc5d0\uc11c \ubcf4\uc2e4 \uc218 \uc788\uc2b5\ub2c8\ub2e4." : "")
+          ? "<strong>설교 영상은 곧 이곳에 올라옵니다.</strong>" +
+            (channelLink ? " 그동안에는 " + channelLink + "에서 보실 수 있습니다." : "")
           : "<strong>Sermons will appear here soon.</strong>" +
             (channelLink ? " In the meantime you can watch them on our " + channelLink + "." : ""));
     }
@@ -386,13 +386,13 @@ var SITE = {
     var english = document.getElementById("english-sermon-player");
     if (english) {
       sermonPlayer(english, SITE.englishSermonId,
-        korean ? churchName + " \uc601\uc5b4\ubd80 \uc124\uad50" : "An English Ministry sermon from " + SITE.churchName,
+        korean ? churchName + " 영어부 설교" : "An English Ministry sermon from " + SITE.churchName,
         SITE.englishPlaylistId
           ? "https://www.youtube.com/playlist?list=" + encodeURIComponent(SITE.englishPlaylistId)
           : "",
-        korean ? "\uc601\uc5b4 \uc608\ubc30 \uc124\uad50 \ub354 \ubcf4\uae30" : "More from the English service",
+        korean ? "영어 예배 설교 더 보기" : "More from the English service",
         korean
-          ? "<strong>\uc601\uc5b4\ubd80 \uc124\uad50 \uc601\uc0c1\uc740 \uace7 \uc774\uacf3\uc5d0 \uc62c\ub77c\uc635\ub2c8\ub2e4.</strong>"
+          ? "<strong>영어부 설교 영상은 곧 이곳에 올라옵니다.</strong>"
           : "<strong>English Ministry sermons will appear here soon.</strong>");
     }
   }
@@ -405,7 +405,7 @@ var SITE = {
     Array.prototype.forEach.call(document.querySelectorAll("[data-give-button]"), function (node) {
       node.innerHTML = SITE.givingUrl
         ? '<a class="btn btn--lg" href="' + esc(SITE.givingUrl) + '">' +
-          (KOREAN ? "\uce74\ub4dc\ub85c \ud5cc\uae08\ud558\uae30" : "Give by card") + "</a>"
+          (KOREAN ? "카드로 헌금하기" : "Give by card") + "</a>"
         : "";
     });
   }
@@ -499,8 +499,8 @@ var SITE = {
   // prayer request without your name -- that an email cannot.
   function buildForms() {
     var forms = {
-      prayer:  { url: SITE.prayerFormUrl,  subject: KOREAN ? "\uae30\ub3c4\uc81c\ubaa9" : "Prayer request" },
-      connect: { url: SITE.connectFormUrl, subject: KOREAN ? "\uc0c8\uac00\uc871 \uce74\ub4dc" : "Connect card" }
+      prayer:  { url: SITE.prayerFormUrl,  subject: KOREAN ? "기도제목" : "Prayer request" },
+      connect: { url: SITE.connectFormUrl, subject: KOREAN ? "새가족 카드" : "Connect card" }
     };
     Array.prototype.forEach.call(document.querySelectorAll("[data-form]"), function (node) {
       var form = forms[node.getAttribute("data-form")];

@@ -19,8 +19,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: github-pages
@@ -39,6 +37,12 @@ jobs:
     needs: check                                   # only runs if the check passed
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    # Only this job may publish. The check job above runs the repository's
+    # own code, so it gets read access and nothing more.
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

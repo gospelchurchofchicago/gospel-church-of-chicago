@@ -34,34 +34,40 @@ Open **`assets/js/site.js`**. At the top you will find a list that looks like
 this:
 
 ```js
-serviceTime:    "[Sunday service time]",
-addressLine1:   "[Street address]",
-addressLine2:   "Des Plaines, IL [ZIP]",
-email:          "[info@gospelchurch1.com]",
+serviceTime:    "10:00 AM",
+serviceTimeKo:  "오전 10시",
+addressLine1:   "1250 E. Golf Road",
+addressLine2:   "Des Plaines, IL 60016",
+email:          "gospelchurch1250@gmail.com",
 ```
 
 Change only the words **between the quotation marks**. Keep the quotation
 marks and the comma at the end of the line.
 
 ```js
-serviceTime:    "Sundays at 11:00 AM",
+serviceTime:    "11:00 AM",
+serviceTimeKo:  "오전 11시",
 ```
 
-That one change updates the home page, the Visit page, the Contact page, the
-Korean page, and the footer of every page at once.
+Every time has an English line and a Korean line; change both. That one
+change updates the strip at the top of every page, the home page, Events and
+Ministries, on both sites at once. The church does not publish a phone
+number, so there is no phone setting.
 
 ---
 
-## Turning on sermons, giving, and the contact form
+## Sermons, giving, and the forms
 
-These three settings are empty to begin with. Until you fill them in, the
-website shows a short note in their place instead of a broken button.
+Until a link setting is filled in, the website shows a short note or an
+email link in its place instead of a broken button.
 
-| Setting | What to paste in |
+| Setting | What it holds |
 | --- | --- |
-| `youtubePlaylistId` | The church's YouTube **sermon playlist** ID — in a playlist link it is the part after `list=`. Once set, every new sermon added to that playlist appears on the website by itself. |
+| `latestSermonId`, `englishSermonId` | The Sunday sermon and the English Ministry sermon that play on the site. A weekly job keeps both current by itself. |
+| `englishPlaylistId` | The English Ministry's YouTube playlist — the part of its link after `list=`. |
 | `youtubeChannelUrl` | The full address of the church's YouTube channel. |
-| `givingUrl` | The address of the church's existing giving platform. The website never handles money itself; the button simply sends people there. |
+| `zelleUrl`, `givingUrl` | Where giving happens. The website never handles money itself. These are locked by the site check: changing one fails the check until the change is confirmed with the treasurer in person or by phone. |
+| `prayerFormUrl`, `connectFormUrl` | The Google Forms for prayer requests and the connect card. |
 | `contactFormUrl` | A form address from a free service such as [Formspree](https://formspree.io). While this is empty, the contact page shows an email address instead. |
 
 ---

@@ -12,6 +12,7 @@
 import { readFileSync, existsSync, readdirSync, statSync } from "node:fs";
 import { join, dirname, normalize } from "node:path";
 import vm from "node:vm";
+import { createHash } from "node:crypto";   // built into Node -- nothing to install
 
 const problems = [];
 const notes = [];
@@ -173,7 +174,80 @@ for (const file of ["assets/js/site.js", "assets/js/events.js"]) {
   }
 }
 
-/* --- 5. Count what is still waiting for real content --------------------- */
+/* --- 5. The sermon settings must be plain YouTube codes -----------------
+   The weekly sermon job writes these two lines by itself and publishes them
+   with nobody looking, so each whole line must be exactly a video code --
+   11 letters, digits, - or _ -- or empty. Anything after the closing quote
+   would be code running on every page.                                     */
+
+const settingsSource = existsSync("assets/js/site.js")
+  ? readFileSync("assets/js/site.js", "utf8") : "";
+
+const SERMON_LINES = {
+  latestSermonId:    /^\s*latestSermonId:\s*"(?:[A-Za-z0-9_-]{11})?",\s*$/m,
+  englishSermonId:   /^\s*englishSermonId:\s*"(?:[A-Za-z0-9_-]{11})?",\s*$/m,
+  englishPlaylistId: /^\s*englishPlaylistId:\s*"[A-Za-z0-9_-]*",\s*$/m,
+};
+for (const [key, line] of Object.entries(SERMON_LINES)) {
+  if (!line.test(settingsSource)) {
+    problems.push(
+      `${key} in assets/js/site.js must be a YouTube code -- letters, digits, ` +
+      `- and _ only -- or "", with nothing else on its line.`
+    );
+  }
+}
+
+/* --- 6. Payment details never change by accident -------------------------
+   Money sent by Zelle cannot be recalled, and nobody can tell one QR code
+   from another by looking at it. These values were confirmed by reading the
+   code on 2 November 2026: it holds ONENESS CHURCH OF CHICAGO and the token
+   gospelchurch1250, the same as zelleUrl. To change them: confirm the new
+   details with the church treasurer in person or by phone -- never only by
+   email or message -- then update the values here in the same change.     */
+
+const PAYMENT_FILES = {
+  "assets/img/zelle-qr.png":
+    "d36d9729147012ef5412715e89aeb2103561f5bf1928b1d563cd05d314358372",
+};
+const PAYMENT_SETTINGS = {
+  zelleUrl:  "https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiT05FTkVTUyBDSFVSQ0ggT0YgQ0hJQ0FHTyIsInRva2VuIjoiZ29zcGVsY2h1cmNoMTI1MCJ9",
+  givingUrl: "",
+};
+
+for (const [file, expected] of Object.entries(PAYMENT_FILES)) {
+  const actual = existsSync(file)
+    ? createHash("sha256").update(readFileSync(file)).digest("hex") : "missing";
+  if (actual !== expected) {
+    problems.push(`${file} has changed. Payment details must be confirmed ` +
+      `with the treasurer before the pinned value in .github/check-site.mjs is updated.`);
+  }
+}
+for (const [key, expected] of Object.entries(PAYMENT_SETTINGS)) {
+  const found = settingsSource.match(new RegExp(key + ':\\s*"([^"]*)"'));
+  if (!found || found[1] !== expected) {
+    problems.push(`${key} in assets/js/site.js has changed. Payment details must be ` +
+      `confirmed with the treasurer before the pinned value in .github/check-site.mjs is updated.`);
+  }
+}
+
+/* --- 7. Every page exists in both languages ------------------------------
+   The language button is built by site.js, so its links never appear in the
+   HTML that check 3 reads. A page missing on one side would send it nowhere. */
+
+const both = settingsSource.match(/BOTH_LANGUAGES\s*=\s*\[([^\]]*)\]/);
+if (!both) {
+  problems.push("assets/js/site.js has no BOTH_LANGUAGES list.");
+} else {
+  for (const [, page] of both[1].matchAll(/"([^"]+)"/g)) {
+    for (const path of [page, "ko/" + page]) {
+      if (!existsSync(path)) {
+        problems.push(`${path} is missing. Every page in BOTH_LANGUAGES needs an English and a Korean copy.`);
+      }
+    }
+  }
+}
+
+/* --- 8. Count what is still waiting for real content --------------------- */
 
 const placeholders = pages.reduce(
   (total, page) => total + (readFileSync(page, "utf8").match(/class="tbd"/g) || []).length,
