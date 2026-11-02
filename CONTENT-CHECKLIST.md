@@ -319,36 +319,57 @@ picture is now a real photograph. What follows is about quality, not gaps.
 unregistered when checked on 26 October 2026. The old site at
 gospelchurch1.com is being retired.
 
+**0. First, the church organization** (see 5c). The domain is verified on
+whichever GitHub account holds the website, so the repository moves into the
+organization before step 2.
+
 **1. Buy it** (about 10 minutes) — at **porkbun.com**, $7.98 the first year,
-then $11.84 a year:
+then $11.84 a year (prices on 30 October 2026). Chosen over Cloudflare,
+Namecheap and GoDaddy; Tori agreed:
 
 - [ ] Search **gospelchurchofchicago.org** and add the .org result to the cart.
-      Say no to any extras (email, hosting, website builder) — none are needed.
-      Privacy for the owner's details is free and included
+      Say no to any extras (email, hosting, website builder, SSL) — none are
+      needed. Privacy for the owner's details is free and included
 - [ ] Create the account with the church's email, **gospelchurch1250@gmail.com**,
-      so the church owns the name, not a person. Turn on two-step sign-in when
-      offered
+      so the church owns the name, not a person. Turn on two-step sign-in
 - [ ] Owner details: organization **Oneness Church of Chicago** (the legal
       name), 1250 E. Golf Road, Des Plaines, IL 60016. These stay private
 - [ ] Pay, ideally with a church card
 - [ ] Make sure **Auto Renew** is on. If the name ever lapses, the site goes dark
+- [ ] Optional: gospelchurchofchicago.com as well ($11.08 a year), so nobody
+      else takes it
 
-**2. Point it at the website** (about 5 minutes, in Porkbun):
+**2. Verify it on the organization** (GitHub, an owner):
 
-- [ ] Domain Management → **DNS** next to the name
+- [ ] The **organization's** Settings → Pages → *Add a domain* →
+      gospelchurchofchicago.org. GitHub shows a TXT record named
+      `_github-pages-challenge-<organization>`
+- [ ] Add that TXT record in Porkbun's DNS, then click *Verify*. **Never
+      delete it** — if the DNS ever moves, copy it across
+
+**3. Point it at the website** (Porkbun → Domain Management → **DNS**):
+
 - [ ] Delete the records Porkbun adds by default (they point at a "parked" page)
-- [ ] Add four records, each **Type A**, **Host** left blank:
-      `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-- [ ] Add one record: **Type CNAME**, **Host** `www`, **Answer**
-      `josephlee0905.github.io`
+- [ ] Four **A** records, Host blank: `185.199.108.153`, `185.199.109.153`,
+      `185.199.110.153`, `185.199.111.153`
+- [ ] Four **AAAA** records, Host blank: `2606:50c0:8000::153`,
+      `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
+- [ ] **CNAME**, Host `www`, Answer `<organization>.github.io` — the
+      organization's name, not a person's
+- [ ] **TXT**, Host blank, `v=spf1 -all`, and **TXT**, Host `_dmarc`,
+      `v=DMARC1; p=reject` — these say the domain never sends email, so mail
+      forged from it is rejected. No MX records
 - [ ] Tell Claude it is done
 
-**3. On launch day** (Claude, with one GitHub setting from the church): tell
-GitHub Pages to use the name, turn on HTTPS, and change every page's
-canonical link from the github.io address to the new one. Previews then live
-at gospelchurchofchicago.org/preview/<branch>/.
+**4. On launch day:** the **repository's** Settings → Pages → *Custom domain*
+→ gospelchurchofchicago.org; wait for the DNS check and the certificate; tick
+**Enforce HTTPS**. No `CNAME` file in the repository — this site publishes
+through Actions, which ignores it. Claude then changes every page's canonical
+link and the preview link in CLAUDE.md on a branch, and once the church is
+ready to be found in search, removes `Disallow: /` from robots.txt. Previews
+then live at gospelchurchofchicago.org/preview/<branch>/.
 
-**4. Retiring gospelchurch1.com:** it is paid until 8 January 2027. Once the
+**5. Retiring gospelchurch1.com:** it is paid until 8 January 2027. Once the
 new site is live, set it at Gabia/Cafe24 to **forward** to the new address and
 let it run until it expires, so old bulletins and bookmarks still arrive
 somewhere. Before switching, save anything on the old site worth keeping —
