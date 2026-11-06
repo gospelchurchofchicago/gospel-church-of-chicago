@@ -449,10 +449,31 @@ Still open (church decisions and outside tasks):
       yes — owners: a GitHub account made with the church email (which
       creates the organization), Joseph, and Tori. All owners have equal
       rights. Keep the church account's two-step sign-in recovery codes with
-      the church. The repository moves into it **before** the domain is
-      bought and verified. Afterwards: allow the Claude GitHub app on the
-      organization, and update the preview links, canonical URLs and the
-      weekly sermon task to the new location
+      the church. Tori agreed to be an owner. The repository moves into it
+      **before** the domain is bought and verified.
+
+      Moving it, from GitHub's transfer documentation: issues, history,
+      branches, workflow files and secrets go with it, and links to the
+      repository and `git` addresses redirect. **The website address does
+      not redirect:** josephlee0905.github.io/gospel-church-of-chicago stops
+      working and the site moves to
+      `<organization>.github.io/gospel-church-of-chicago`. That is why the
+      domain's `www` record points at the organization. GitHub may also
+      retire the old name josephlee0905/gospel-church-of-chicago for reuse,
+      which does not matter here.
+
+      Steps: (1) make a GitHub account with the church email, two-step
+      sign-in on, recovery codes kept with the church; (2) from it, create a
+      free organization; (3) invite Joseph and Tori as owners; (4) Joseph
+      transfers the repository (its Settings → General → Danger Zone →
+      Transfer); (5) allow the Claude GitHub app on the organization.
+
+      Then check, since the documentation does not cover these: the
+      repository's Settings → Pages → Source is still **GitHub Actions**;
+      Settings → Environments → **github-pages** still lets every branch
+      deploy (previews need it); Actions is allowed in the organization. Push
+      a branch and confirm the preview appears at the new address. Update the
+      weekly sermon task and this checklist to the new location
 - [ ] Where to tell the congregation the church never asks for gift cards,
       wire transfers or payments by email or text
 - [ ] Keep or delete `GCC_Website_Project_Brief_Aug30_v4.pptx` (and its
