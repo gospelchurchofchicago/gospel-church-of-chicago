@@ -468,6 +468,14 @@ Still open (church decisions and outside tasks):
       transfers the repository (its Settings → General → Danger Zone →
       Transfer); (5) allow the Claude GitHub app on the organization.
 
+      **Done 7 November 2026:** (1) GitHub account `gospelchurch1250`, with
+      two-step sign-in; (2) organization **gospelchurchofchicago**, recorded
+      as belonging to Oneness Church of Chicago; (3) Joseph joined as owner,
+      Tori (`toriyokoyama`) invited as owner; (4) repository transferred to
+      `gospelchurchofchicago/gospel-church-of-chicago`. The pages' canonical
+      links still name josephlee0905.github.io; they change to the domain on
+      launch day (4b, step 4).
+
       Then check, since the documentation does not cover these: the
       repository's Settings → Pages → Source is still **GitHub Actions**;
       Settings → Environments → **github-pages** still lets every branch
