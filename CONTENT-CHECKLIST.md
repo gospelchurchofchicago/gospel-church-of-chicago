@@ -343,7 +343,7 @@ Namecheap and GoDaddy; Tori agreed:
 
 - [ ] The **organization's** Settings → Pages → *Add a domain* →
       gospelchurchofchicago.org. GitHub shows a TXT record named
-      `_github-pages-challenge-<organization>`
+      `_github-pages-challenge-gospelchurchofchicago`
 - [ ] Add that TXT record in Porkbun's DNS, then click *Verify*. **Never
       delete it** — if the DNS ever moves, copy it across
 
@@ -354,8 +354,8 @@ Namecheap and GoDaddy; Tori agreed:
       `185.199.110.153`, `185.199.111.153`
 - [ ] Four **AAAA** records, Host blank: `2606:50c0:8000::153`,
       `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
-- [ ] **CNAME**, Host `www`, Answer `<organization>.github.io` — the
-      organization's name, not a person's
+- [ ] **CNAME**, Host `www`, Answer `gospelchurchofchicago.github.io` — the
+      organization, not a person
 - [ ] **TXT**, Host blank, `v=spf1 -all`, and **TXT**, Host `_dmarc`,
       `v=DMARC1; p=reject` — these say the domain never sends email, so mail
       forged from it is rejected. No MX records
@@ -476,12 +476,13 @@ Still open (church decisions and outside tasks):
       links still name josephlee0905.github.io; they change to the domain on
       launch day (4b, step 4).
 
-      Then check, since the documentation does not cover these: the
-      repository's Settings → Pages → Source is still **GitHub Actions**;
-      Settings → Environments → **github-pages** still lets every branch
-      deploy (previews need it); Actions is allowed in the organization. Push
-      a branch and confirm the preview appears at the new address. Update the
-      weekly sermon task and this checklist to the new location
+      Checked the same day: a push from the branch published, so Pages, the
+      github-pages environment and Actions all came through the move. The
+      site is now at gospelchurchofchicago.github.io/gospel-church-of-chicago/,
+      previews under /preview/<branch>/; the old josephlee0905.github.io
+      address answers 404, as GitHub's documentation says. Still to do:
+      confirm the Claude GitHub app is installed on the organization, so new
+      Claude sessions can open the repository
 - [ ] Where to tell the congregation the church never asks for gift cards,
       wire transfers or payments by email or text
 - [ ] Keep or delete `GCC_Website_Project_Brief_Aug30_v4.pptx` (and its
