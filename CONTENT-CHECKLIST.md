@@ -427,6 +427,17 @@ both languages; only the publishing step may publish; the Korean in
 `site.js` is written as Korean; README, EDITING.md and CLAUDE.md corrected.
 The English playlist ID was checked and is right.
 
+Full check of the draft site at the organization's address, 7 November
+2026: all 19 pages load in both languages with no errors; every language
+button lands on its twin; every page, picture and link answers; the Zelle
+code on the published Give page reads ONENESS CHURCH OF CHICAGO /
+gospelchurch1250, matches `zelleUrl` and is the picture the bank app
+confirmed; both sermons are the newest, play on other sites, and their
+buttons lead to them; both Google Forms are open, need no sign-in and do
+not collect email automatically; no phone number and no email but the
+church's appears anywhere. Not checkable from here: that each Zoom link
+opens the right meeting — join each once.
+
 Still open (church decisions and outside tasks):
 
 - [x] ~~Zoom links: keep on the site, or email only~~ — keep (see 5b)
