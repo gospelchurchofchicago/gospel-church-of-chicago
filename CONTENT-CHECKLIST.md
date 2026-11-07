@@ -436,7 +436,8 @@ confirmed; both sermons are the newest, play on other sites, and their
 buttons lead to them; both Google Forms are open, need no sign-in and do
 not collect email automatically; no phone number and no email but the
 church's appears anywhere. Not checkable from here: that each Zoom link
-opens the right meeting — join each once.
+opens the right meeting — join each once. Choir at 9:00 AM and lunch at
+about 11:30 AM on Sundays confirmed by Joseph the same day.
 
 Still open (church decisions and outside tasks):
 
