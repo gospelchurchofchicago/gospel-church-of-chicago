@@ -60,12 +60,12 @@ var SITE = {
   //
   // To change which sermon plays, replace the code below. Leave it as ""
   // and the page shows only the button.
-  latestSermonId: "crf0E0mOhpQ",
+  latestSermonId: "YpPkFCgkZ90",
 
   // The English Ministry's own playlist, and the newest sermon in it. The
   // weekly job keeps englishSermonId current, just as it does latestSermonId.
   englishPlaylistId: "PLXgMhGQD-cqI",
-  englishSermonId:   "wPuXkMISZB4",
+  englishSermonId:   "pSDNB0ZH59I",
   youtubeChannelUrl: "https://www.youtube.com/@gospelchurchofchicago3850",
 
   // Give page. The website never handles money itself -- these only send
