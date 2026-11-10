@@ -319,6 +319,16 @@ picture is now a real photograph. What follows is about quality, not gaps.
 unregistered when checked on 26 October 2026. The old site at
 gospelchurch1.com is being retired.
 
+**Done 10 November 2026** (by a Claude in Chrome session, Joseph at the
+keys): bought at Porkbun under the church email, paid through 10 November
+2027, auto-renew, two-step sign-in and privacy on; every DNS record below in
+place and checked from outside (A, AAAA, www CNAME, SPF, DMARC, the GitHub
+challenge TXT; no MX); verified on the organization. It also set the
+repository's custom domain early, so the domain began serving `main` — the
+unfinished starter — before launch. **Still to do:** click the registrant
+email verification from Porkbun/ICANN by **25 November 2026**, or the domain
+is suspended. GitHub created no `CNAME` file; none is needed.
+
 **0. First, the church organization** (see 5c). The domain is verified on
 whichever GitHub account holds the website, so the repository moves into the
 organization before step 2.
