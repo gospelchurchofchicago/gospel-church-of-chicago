@@ -248,7 +248,25 @@ if (!both) {
   }
 }
 
-/* --- 8. Count what is still waiting for real content --------------------- */
+/* --- 8. Every page names its own address on the church's domain ----------
+   Search engines use this link to know a page's one true address. A page
+   left pointing somewhere else -- an old address, or another page -- would
+   send searchers to the wrong place.                                       */
+
+const DOMAIN = "https://gospelchurchofchicago.org/";
+for (const page of pages) {
+  const path = page.split("\\").join("/");
+  if (path.startsWith("preview/")) continue;
+  const expected = DOMAIN + (path === "index.html" ? "" : path);
+  const found = readFileSync(page, "utf8").match(/<link rel="canonical" href="([^"]*)">/);
+  if (!found) {
+    problems.push(`${page} has no canonical link. It should be ${expected}`);
+  } else if (found[1] !== expected) {
+    problems.push(`${page}'s canonical link is ${found[1]}. It should be ${expected}`);
+  }
+}
+
+/* --- 9. Count what is still waiting for real content --------------------- */
 
 const placeholders = pages.reduce(
   (total, page) => total + (readFileSync(page, "utf8").match(/class="tbd"/g) || []).length,

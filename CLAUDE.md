@@ -38,7 +38,7 @@ Changes never go straight to the live site. The order is always:
 5. **Give them the preview link** and wait:
 
    ```
-   https://<owner>.github.io/gospel-church-of-chicago/preview/<branch>/
+   https://gospelchurchofchicago.org/preview/<branch>/
    ```
 
    The `<branch>` part is the branch name with any `/` replaced by `-`.
