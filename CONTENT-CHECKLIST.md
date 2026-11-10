@@ -332,6 +332,13 @@ unfinished starter — before launch. **Still to do:** click the registrant
 email verification from Porkbun/ICANN by **25 November 2026**, or the domain
 is suspended. GitHub created no `CNAME` file; none is needed.
 
+**Launched 10 November 2026.** Joseph confirmed Rev. Lee's approval of the
+Korean pages and the signed photo consent forms, then said to launch. The
+first publish of `main` was a fast-forward to a commit already published as
+a preview, so GitHub kept the preview's copy of the old site; the next
+publish fixed it, and CLAUDE.md now says to merge with a merge commit.
+Still to do: tick **Enforce HTTPS** in the repository's Settings → Pages.
+
 **0. First, the church organization** (see 5c). The domain is verified on
 whichever GitHub account holds the website, so the repository moves into the
 organization before step 2.

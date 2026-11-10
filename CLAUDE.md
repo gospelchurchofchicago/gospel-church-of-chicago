@@ -44,7 +44,13 @@ Changes never go straight to the live site. The order is always:
    The `<branch>` part is the branch name with any `/` replaced by `-`.
    Tell them it is a private draft, not the real site.
 6. **Wait for them to say it looks right.** Do not merge before this.
-7. **Merge to `main` and push.** That is what makes it live.
+7. **Merge to `main` with a merge commit and push** —
+   `git merge --no-ff <branch>`, never a fast-forward. That is what makes
+   it live. GitHub Pages labels each publish with its commit, and a second
+   publish of a commit already published as a preview is quietly ignored:
+   a fast-forwarded `main` would keep showing the preview's copy of the
+   old site. A merge commit is a new commit, so it always publishes. Then
+   open the live site and confirm the change is there.
 
 `main` is the live site. **Never commit to `main` directly.** Never merge on
 their behalf without an explicit yes.
