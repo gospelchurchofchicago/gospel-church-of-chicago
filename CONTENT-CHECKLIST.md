@@ -196,7 +196,9 @@ optional, and the pages read properly without any of it.
 There is now a complete Korean site: the same nine pages as the English one,
 so a Korean-speaking visitor never has to read English to find anything.
 
-- [ ] **Rev. Duk Lee should read all nine Korean pages before launch.** This
+- [x] **Rev. Duk Lee should read all nine Korean pages before launch.** Done:
+      Joseph confirmed on 10 November 2026 that Rev. Lee has read and approved
+      them, including his greeting. This
       is the most important thing left on this list. The Korean was written
       here from what the church has described — it is not a translation of
       the English pages, and it is not machine-translated — but it goes out
@@ -212,7 +214,8 @@ so a Korean-speaking visitor never has to read English to find anything.
 - [ ] On the same page, Joseph Lee is now **영어부 리더** (English Ministry
       leader), no longer 부목사. Worth Rev. Lee confirming that is the term
       the church uses in Korean
-- [ ] **His greeting on 홈 (담임목사 인사말) is written in his name** and
+- [x] **His greeting on 홈 (담임목사 인사말) is written in his name** — approved
+      with the rest of the Korean pages on 10 November 2026 — and
       needs his approval, word for word. Two facts in particular: that the
       church began in **1991** as a small gathering, and "지금까지
       데스플레인스에서", which says the church has been in Des Plaines the
@@ -453,8 +456,10 @@ Still open (church decisions and outside tasks):
 
 - [x] ~~Zoom links: keep on the site, or email only~~ — keep (see 5b)
 - [ ] Zoom, both meetings: waiting room, screen sharing host only, new passcodes
-- [ ] Parents' agreement for the photos with children (`congregation.jpg`,
-      `children-sanctuary.jpg` and `-wide`, `families.jpg`). **In progress:**
+- [x] Parents' agreement for the photos with children (`congregation.jpg`,
+      `children-sanctuary.jpg` and `-wide`, `families.jpg`). **Signed** —
+      Joseph confirmed on 10 November 2026; the forms are kept with the
+      church. Earlier note:
       Joseph is collecting signed consent forms (2 November). Keep the signed
       forms with the church, not in the website's files. If a family does
       not sign, swap that photo before launch. The policy is now a house
