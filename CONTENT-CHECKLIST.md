@@ -477,8 +477,10 @@ Still open (church decisions and outside tasks):
       now pinned by the site check
 - [x] ~~GitHub → Settings → Notifications → Actions: email on failed
       workflows.~~ Done on Joseph's account: On GitHub and Email, failed
-      workflows only, to his own address. After launch, run *Use the newest
-      Sunday sermon* once by hand to confirm the job works
+      workflows only, to his own address. Run by hand after launch on 10
+      November 2026: it reached YouTube, found both sermons current and
+      changed nothing, as it should. The pre-launch Claude scheduled task
+      that did this job was switched off the same day
 - [ ] A church GitHub organization with two or more owners. **Decided:**
       yes — owners: a GitHub account made with the church email (which
       creates the organization), Joseph, and Tori. All owners have equal
