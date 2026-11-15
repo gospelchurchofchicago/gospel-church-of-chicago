@@ -466,7 +466,12 @@ Still open (church decisions and outside tasks):
 - [x] Parents' agreement for the photos with children (`congregation.jpg`,
       `children-sanctuary.jpg` and `-wide`, `families.jpg`). **Signed** —
       Joseph confirmed on 10 November 2026; the forms are kept with the
-      church. Earlier note:
+      church. **11 November 2026:** one family asked that their two
+      daughters not be shown. They are cropped out of every photo, and the
+      one group photo where cropping would cut the group apart keeps the
+      girl's face blurred. The photos that showed them were removed from
+      the site; the originals are still in the repository's history.
+      Earlier note:
       Joseph is collecting signed consent forms (2 November). Keep the signed
       forms with the church, not in the website's files. If a family does
       not sign, swap that photo before launch. The policy is now a house
