@@ -471,6 +471,11 @@ Still open (church decisions and outside tasks):
       one group photo where cropping would cut the group apart keeps the
       girl's face blurred. The photos that showed them were removed from
       the site; the originals are still in the repository's history.
+      **15 November 2026:** a second family asked the same for their two
+      daughters. The Home page group photo and the Visit photo blur their
+      faces (cropping would cut the photos apart; Joseph chose blurring
+      until new photos come), and the Home page Children card now uses the
+      Ministries Children photo. Joseph is gathering new photos.
       Earlier note:
       Joseph is collecting signed consent forms (2 November). Keep the signed
       forms with the church, not in the website's files. If a family does
