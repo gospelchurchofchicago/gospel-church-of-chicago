@@ -337,7 +337,7 @@ Korean pages and the signed photo consent forms, then said to launch. The
 first publish of `main` was a fast-forward to a commit already published as
 a preview, so GitHub kept the preview's copy of the old site; the next
 publish fixed it, and CLAUDE.md now says to merge with a merge commit.
-Still to do: tick **Enforce HTTPS** in the repository's Settings → Pages.
+**Enforce HTTPS** is on (checked 15 November 2026: http:// forwards to https://).
 
 **0. First, the church organization** (see 5c). The domain is verified on
 whichever GitHub account holds the website, so the repository moves into the
