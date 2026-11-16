@@ -1,9 +1,19 @@
-# Puts the newest Sunday sermon on the website, once a week.
+# Puts the newest sermons on the website.
 #
-# Runs every Monday morning. It reads the Sunday playlist from YouTube,
-# picks the newest sermon that is actually allowed to play on another
-# website, and if that is not the one already showing, updates the settings
-# file and republishes the site.
+# Runs at these times, in Chicago winter time. GitHub keeps schedules in
+# world time (UTC), so from March to November each one runs an hour later.
+#
+#   Sunday 3:17 PM     the English Ministry sermon, posted around midday
+#   Monday 12:07 AM    the Korean Sunday sermon, which usually finishes
+#                      uploading around 11:30 PM Sunday
+#   every day 9:17 AM  a catch-up, in case a run above was delayed or
+#                      skipped, which GitHub sometimes does when busy
+#
+# None is on the hour: that is when GitHub is busiest. Each run reads the
+# church's channel on YouTube, picks the newest sermon that is actually
+# allowed to play on another website, and if that is not the one already
+# showing, updates the settings file and republishes the site. Most runs
+# find nothing new and change nothing.
 #
 # It does the same for the English Ministry playlist. A problem there only
 # shows a warning; it never holds back the Sunday sermon.
@@ -16,14 +26,16 @@
 # To switch this off for good: delete this file. The website carries on
 # exactly as it is, showing whichever sermon it was last given.
 #
-# To run it now rather than waiting for Monday: Actions -> this workflow ->
+# To run it now rather than waiting: Actions -> this workflow ->
 # "Run workflow".
 
 name: Use the newest Sunday sermon
 
 on:
   schedule:
-    - cron: "0 15 * * 1"        # Mondays, mid-morning in Chicago
+    - cron: "17 21 * * 0"       # Sunday 3:17 PM Chicago (winter)
+    - cron: "7 6 * * 1"         # Monday 12:07 AM Chicago (winter)
+    - cron: "17 15 * * *"       # every day 9:17 AM Chicago (winter)
   workflow_dispatch:
 
 jobs:
