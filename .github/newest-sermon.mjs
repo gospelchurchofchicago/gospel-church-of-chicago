@@ -2,7 +2,8 @@
  * Sunday sermon from the church's channel, and the newest sermon in the
  * English Ministry's playlist.
  *
- * Run every Monday by .github/workflows/newest-sermon.yml. Nobody needs to
+ * Run on a schedule by .github/workflows/newest-sermon.yml: Sunday afternoon,
+ * just after midnight Sunday night, and every morning. Nobody needs to
  * run this by hand.
  *
  * What it does, in order:

@@ -136,16 +136,15 @@ the site only holds the two links, in `assets/js/site.js`.
       is off. Studio's **Select all** only ticks the page you are looking at,
       about 30 at a time, so bulk edits fix a page and leave the rest.
 
-- [ ] **Keeping the sermon current — starts working at launch, not before.**
-      Every Monday morning, GitHub reads the church's YouTube channel, finds
-      the newest **Sunday** service, checks it will actually play on another
-      website, and puts it on the site.
-
-      **It has not run yet, and cannot until the site is launched.** GitHub
-      only runs a scheduled job from the `main` branch, and this job — like
-      everything else built so far — is still on the preview branch. Until
-      launch, a scheduled Claude task does the same job on Sunday and
-      Monday afternoons.
+- [x] **Keeping the sermon current.** GitHub reads the church's YouTube
+      channel, finds the newest **Sunday** service and the newest English
+      Ministry sermon, checks each will actually play on another website,
+      and puts them on the site. Since 16 November 2026 it runs Sunday at
+      3:17 PM, Monday at 12:07 AM (the Korean upload usually finishes around
+      11:30 PM Sunday) and every morning at 9:17 AM as a catch-up — Chicago
+      winter times, an hour later in summer. The Monday-only schedule it
+      replaced was skipped by GitHub on 16 November and had to be run by
+      hand.
 
       It reads the channel rather than a playlist, because the old 주일예배
       playlist stopped being updated in 2020 while the services carried on
@@ -337,7 +336,7 @@ Korean pages and the signed photo consent forms, then said to launch. The
 first publish of `main` was a fast-forward to a commit already published as
 a preview, so GitHub kept the preview's copy of the old site; the next
 publish fixed it, and CLAUDE.md now says to merge with a merge commit.
-Still to do: tick **Enforce HTTPS** in the repository's Settings → Pages.
+**Enforce HTTPS** is on (checked 15 November 2026: http:// forwards to https://).
 
 **0. First, the church organization** (see 5c). The domain is verified on
 whichever GitHub account holds the website, so the repository moves into the
@@ -471,6 +470,11 @@ Still open (church decisions and outside tasks):
       one group photo where cropping would cut the group apart keeps the
       girl's face blurred. The photos that showed them were removed from
       the site; the originals are still in the repository's history.
+      **15 November 2026:** a second family asked the same for their two
+      daughters. The Home page group photo and the Visit photo blur their
+      faces (cropping would cut the photos apart; Joseph chose blurring
+      until new photos come), and the Home page Children card now uses the
+      Ministries Children photo. Joseph is gathering new photos.
       Earlier note:
       Joseph is collecting signed consent forms (2 November). Keep the signed
       forms with the church, not in the website's files. If a family does

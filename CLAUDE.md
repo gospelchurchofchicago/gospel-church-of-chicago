@@ -58,9 +58,10 @@ their behalf without an explicit yes.
 Only one preview exists at a time — pushing a different branch replaces it.
 That is fine for one change at a time, which is how this site is maintained.
 
-The weekly sermon job publishes `main` every Monday morning when there is a
-new sermon, and that also clears whatever preview was up. If a preview
-vanishes on a Monday, push the branch again.
+The sermon job publishes `main` whenever it finds a new sermon — usually
+Sunday afternoon (English) and just after midnight Sunday night (Korean) —
+and that also clears whatever preview was up. If a preview vanishes, push
+the branch again. It also runs every morning as a catch-up.
 
 GitHub switches a scheduled job off after 60 days without activity in the
 repository. The weekly sermon commits keep it running, but after a long
