@@ -141,7 +141,7 @@ the site only holds the two links, in `assets/js/site.js`.
       Ministry sermon, checks each will actually play on another website,
       and puts them on the site. Since 16 November 2026 it runs Sunday at
       3:17 PM, Monday at 12:07 AM (the Korean upload usually finishes around
-      11:30 PM Sunday) and every morning at 9:17 AM as a catch-up — Chicago
+      11:30 PM Sunday) and every morning at 7:17 AM as a catch-up — Chicago
       winter times, an hour later in summer. The Monday-only schedule it
       replaced was skipped by GitHub on 16 November and had to be run by
       hand.
