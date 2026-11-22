@@ -60,7 +60,7 @@ var SITE = {
   //
   // To change which sermon plays, replace the code below. Leave it as ""
   // and the page shows only the button.
-  latestSermonId: "IFjLis4Efdk",
+  latestSermonId: "O7zw7kLoybI",
 
   // The English Ministry's own playlist, and the newest sermon in it. The
   // weekly job keeps englishSermonId current, just as it does latestSermonId.
