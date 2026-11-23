@@ -144,7 +144,16 @@ the site only holds the two links, in `assets/js/site.js`.
       11:30 PM Sunday) and every morning at 7:17 AM as a catch-up — Chicago
       winter times, an hour later in summer. The Monday-only schedule it
       replaced was skipped by GitHub on 16 November and had to be run by
-      hand.
+      hand. GitHub also starts scheduled runs late, often by hours, which
+      the extra runs absorb.
+
+      On 22 November the job found the new Sunday sermon at 2:24 PM, but
+      GitHub failed to publish it (a glitch on its side), and later runs
+      saw the sermon already saved and stopped. It was published by hand on
+      23 November. Since then the job publishes as a fresh run of its own
+      (so GitHub never takes it for an earlier publish), and every run
+      compares the live site with the saved sermons and publishes again if
+      the live site is behind.
 
       It reads the channel rather than a playlist, because the old 주일예배
       playlist stopped being updated in 2020 while the services carried on
