@@ -13,7 +13,8 @@
 # church's channel on YouTube, picks the newest sermon that is actually
 # allowed to play on another website, and if that is not the one already
 # showing, updates the settings file and republishes the site. Most runs
-# find nothing new and change nothing.
+# find nothing new and change nothing. If a publish ever fails, the next run
+# sees that the live site is behind and publishes again.
 #
 # It does the same for the English Ministry playlist. A problem there only
 # shows a warning; it never holds back the Sunday sermon.
@@ -44,8 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    outputs:
-      changed: ${{ steps.choose.outputs.changed }}
+      actions: write            # to start a publish run of its own
     steps:
       - uses: actions/checkout@v4
 
@@ -67,12 +67,28 @@ jobs:
           git commit -am "Show this week's sermon on the site"
           git push
 
-  publish:
-    name: Publish
-    needs: choose
-    if: needs.choose.outputs.changed == 'true'
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    uses: ./.github/workflows/publish.yml
+      # A sermon saved by an earlier run whose publish failed is on main but
+      # not on the live site, and every later run would find it "already on
+      # the site". So compare the live site with main, and publish again if
+      # the live site is behind. If the site cannot be read, do nothing.
+      - name: Is the live site behind?
+        id: live
+        if: steps.choose.outputs.changed != 'true'
+        run: |
+          saved=$(grep -E 'latestSermonId|englishSermonId' assets/js/site.js)
+          live=$(curl -fsS https://gospelchurchofchicago.org/assets/js/site.js | grep -E 'latestSermonId|englishSermonId' || true)
+          if [ -n "$live" ] && [ "$live" != "$saved" ]; then
+            echo "The live site is behind the saved sermons. Publishing again."
+            echo "behind=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Publish as a run of its own, started now. GitHub labels each publish
+      # with its commit and ignores a second publish under a label it has
+      # already used. A run started here is labeled with main as it is now,
+      # so it always gets a new label; publishing from inside this run would
+      # reuse the label of main before the sermon was saved.
+      - name: Publish
+        if: steps.choose.outputs.changed == 'true' || steps.live.outputs.behind == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run publish.yml --ref main
